@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 # 数据加载
-#data = pd.read_csv('Mall_Customers.csv', encoding='gbk')
+
 data = pd.read_csv('E:\Data_Engine_with_Python-master\\c.csv')
 train_x = data[["car_ID","enginesize","price","carlength"]]
 
