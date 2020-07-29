@@ -12,17 +12,8 @@ temp = soup.find('div',class_='search-result-list')
 
 print(temp)
 df= pd.DataFrame(columns=['名称','价格','产品图片链接'])
-p_list = temp.find_all('p')
-print(p_list)
-for rows in p_list:
-    temp2={}
-    name= rows[1]
-    price= rows[2]
-    temp2['名称'],temp2['价格']=name,print
-#     temp2={}
-#     p2_list=p_list.find_all('p')
- 
-#     名称,价格=p2_list[0],p2_list[1]
-#     temp2['名称'],temp2['价格']=名称,价格
-    df=df.append(temp2,ignore_index=True)
-print(df)
+
+name = soup.find_all('p',class_='cx-name text-hover')
+price = soup.find_all('p',class_='cx-price')
+pic = soup.finde_all('img',class_="img")
+print(name,price,pic)
