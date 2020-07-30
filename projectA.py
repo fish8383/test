@@ -10,10 +10,33 @@ content = html.text
 soup = BeautifulSoup(content,'html.parser')
 temp = soup.find('div',class_='search-result-list')
 
-print(temp)
+
 df= pd.DataFrame(columns=['名称','价格','产品图片链接'])
+p_list = temp.find_all('p')
+print(temp)
+
+
+temp2={}
+images = temp.find_all('img')
+for image in images:
+    
+    temp2['产品图片链接']=image['src']
+    
 
 name = soup.find_all('p',class_='cx-name text-hover')
 price = soup.find_all('p',class_='cx-price')
-pic = soup.finde_all('img',class_="img")
-print(name,price,pic)
+
+
+for i in range(len(name)):
+    
+    temp2['名称']=name[i].string
+    temp2['价格']=price[i].string
+    # temp2['产品图片链接']=pic[i]
+    df=df.append(temp2,ignore_index=True)
+df['最高价格']=df['价格']
+df['最低价格']=df['价格']
+df['最高价格']=df['最高价格'].str.split('-',expand=True)
+df['最低价格']=df['最低价格'].str.split('-',expand=True)[1]
+df.drop(columns=['价格'],inplace=True)
+print(df)
+df.to_excel('E:\python_project\\SUV清单.xlsx')
