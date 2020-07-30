@@ -35,8 +35,8 @@ for i in range(len(name)):
     df=df.append(temp2,ignore_index=True)
 df['最高价格']=df['价格']
 df['最低价格']=df['价格']
-df['最高价格']=df['最高价格'].str.split('-',expand=True)
-df['最低价格']=df['最低价格'].str.split('-',expand=True)[1]
+df['最高价格']=df['最高价格'].str.split('-',expand=True)[1]
+df['最低价格']=df['最低价格'].str.split('-',expand=True)
 df.drop(columns=['价格'],inplace=True)
 print(df)
-df.to_excel('E:\python_project\\SUV清单.xlsx')
+df.to_excel('E:\\python_project\\GIT\\DATA_ANALYSIS\\test\\test\\SUV清单.xlsx')
