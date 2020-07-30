@@ -47,7 +47,7 @@ def rule2():
 	print("频繁项集：", frequent_itemsets)
     
 	print("关联规则：", rules[ (rules['lift'] >= 1) & (rules['confidence'] >= 0.3) ])
-	print(rules['confidence'])
+	
 	rules.to_excel('E:\\python_project\\GIT\\DATA_ANALYSIS\\test\\test\\关联规则2.xlsx')
 	frequent_itemsets.to_excel('E:\\python_project\\GIT\\DATA_ANALYSIS\\test\\test\\频繁项集2.xlsx')
 	end = time.time()
