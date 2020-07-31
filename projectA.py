@@ -31,7 +31,7 @@ for i in range(len(name)):
     
     temp2['名称']=name[i].string
     temp2['价格']=price[i].string
-    # temp2['产品图片链接']=pic[i]
+    
     df=df.append(temp2,ignore_index=True)
 df['最高价格']=df['价格']
 df['最低价格']=df['价格']

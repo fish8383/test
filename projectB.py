@@ -51,6 +51,6 @@ def rule2():
 	rules.to_excel('E:\\python_project\\GIT\\DATA_ANALYSIS\\test\\test\\关联规则2.xlsx')
 	frequent_itemsets.to_excel('E:\\python_project\\GIT\\DATA_ANALYSIS\\test\\test\\频繁项集2.xlsx')
 	end = time.time()
-	print("总用时：", end-start)
+	
 
 rule2()
